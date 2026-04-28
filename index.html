@@ -6,31 +6,39 @@
     <title>YAĞMUR ASLANHAN - WEB TEKNOLOJİLERİ PROJESİ</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
         body {
-            background-color: #fff0f3; /* Pamuk şeker pembesi arka plan */
-            font-family: 'Quicksand', sans-serif; /* Yuvarlak hatlı tatlı font */
-            color: #5c4d4d; /* Koyu mor/kahve yazı rengi */
+            background-color: #fff0f3;
+            font-family: 'Quicksand', sans-serif;
+            color: #5c4d4d;
         }
         .navbar-brand {
             font-weight: bold;
             color: white !important;
         }
-        /* Giriş Yap butonu da pembe ile uyumlu olsun */
         .btn-primary {
             background-color: #ff4d6d !important;
             border: none !important;
             border-radius: 50px;
+        }
+        /* Kartlara dokununca hafif yükselme efekti */
+        .card {
+            transition: transform 0.3s;
+            border-radius: 20px;
+            border: 2px solid #ffb3c1;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: #ff4d6d;
         }
     </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ff85a2 !important; border-bottom: 3px solid #fbb1bd;">
         <div class="container">
-            <a class="navbar-brand" href="index.html">WEB PROJEM</a>
+            <a class="navbar-brand" href="index.html">🌸 WEB PROJEM</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -47,6 +55,55 @@
         </div>
     </nav>
 
+    <div class="container mt-5">
+        <div class="p-5 mb-4 rounded-5 shadow-sm text-center" style="background: linear-gradient(135deg, #ff85a2, #fbb1bd); color: white;">
+            <div class="container-fluid py-5">
+                <h1 class="display-5 fw-bold text-white">✨ Hoş Geldiniz! ✨</h1>
+                <p class="fs-4 mt-3">
+                    Ben Yağmur, Sakarya Üniversitesi Bilgisayar Mühendisliği öğrencisiyim. 
+                    Pembe dünyama ve ilk web projeme hoş geldin! 🎀
+                </p>
+                <hr class="my-4 border-white">
+                <p>Mühendislik yolculuğumu ve projelerimi keşfetmek için aşağıya göz atabilirsin.</p>
+                <a href="hakkimda.html" class="btn btn-light btn-lg px-5 rounded-pill shadow-sm" style="color: #ff4d6d; font-weight: bold;">
+                    Beni Tanı 🌸
+                </a>
+            </div>
+        </div>
+
+        <div class="row g-4 mt-2">
+            <div class="col-md-4">
+                <div class="card h-100 text-center p-3 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title" style="color: #ff4d6d;">📍 Şehrim</h5>
+                        <p class="card-text">Sakarya'nın güzelliklerini ve anılarımı keşfet.</p>
+                        <a href="sehrim.html" class="btn btn-outline-danger btn-sm rounded-pill">Göz At</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 text-center p-3 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title" style="color: #ff4d6d;">👩🏻‍💻 CV & Yetenekler</h5>
+                        <p class="card-text">Eğitim hayatım ve teknik becerilerim burada.</p>
+                        <a href="ozgecmis.html" class="btn btn-outline-danger btn-sm rounded-pill">İncele</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 text-center p-3 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title" style="color: #ff4d6d;">✉️ İletişim</h5>
+                        <p class="card-text">Soruların için bana bir mesaj bırakabilirsin!</p>
+                        <a href="iletisim.html" class="btn btn-outline-danger btn-sm rounded-pill">Mesaj At</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <footer class="text-center py-4 mt-5" style="background-color: #ff85a2; color: white;">
+    <p>© 2026 Yağmur Aslanhan | Sakarya Üniversitesi Bilgisayar Mühendisliği ✨</p>
+</footer>
 </body>
 </html>
