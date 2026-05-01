@@ -36,6 +36,10 @@
             background-color: #ff85a2;
             color: white;
         }
+        .highlight-title {
+            color: #ff4d6d;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -72,12 +76,14 @@
 
                 <!-- Eğitim Bilgileri (Semantic: Section) -->
                 <section class="cv-card shadow-sm mb-4 p-4">
-                    <h4 class="mb-4" style="color: #ff4d6d;">🎓 Eğitim Bilgileri</h4>
+                    <h4 class="mb-4 highlight-title">🎓 Eğitim Bilgileri</h4>
                     
                     <!-- Lise (Semantic: Article) -->
                     <article class="ms-3 mb-4">
                         <h5 class="fw-bold">Şehit Mustafa Yaman Anadolu İmam Hatip Lisesi</h5>
                         <p class="mb-1 text-muted">Fen ve Sosyal Bilimler Proje Okulu (Bartın) | 2020 - 2024</p>
+                        <!-- mb-0 ile aradaki boşluğu kaldırdık -->
+                        <p class="fw-bold mb-0" style="color: #ff85a2;">Mezuniyet Ortalaması: 96.07110</p>
                         <p class="fw-bold" style="color: #ff85a2;">YKS Başarı Sıralaması: 53.472</p>
                         <p>Fen Bilimleri odaklı bir müfredatla lise eğitimimi tamamlayarak mühendislik fakültesine güçlü bir temel ile geçiş yaptım.</p>
                     </article>
@@ -95,12 +101,12 @@
 
                 <!-- Teknik Yetenekler (Semantic: Section) -->
                 <section class="cv-card shadow-sm mb-4 p-4">
-                    <h4 class="mb-4" style="color: #ff4d6d;">💖 Teknik Yetenekler</h4>
+                    <h4 class="mb-4 highlight-title">💖 Teknik Yetenekler</h4>
                     <div class="d-flex flex-wrap gap-2">
                         <span class="badge rounded-pill p-3" style="background-color: #fff0f3; color: #ff4d6d; border: 1px solid #ffb3c1;">C# & .NET</span>
                         <span class="badge rounded-pill p-3" style="background-color: #fff0f3; color: #ff4d6d; border: 1px solid #ffb3c1;">HTML5 & CSS3</span>
                         <span class="badge rounded-pill p-3" style="background-color: #fff0f3; color: #ff4d6d; border: 1px solid #ffb3c1;">Bootstrap 5</span>
-                        <span class="badge rounded-pill p-3" style="background-color: #fff0f3; color: #ff4d6d; border: 1px solid #ffb3c1;">SQL Server</span>
+                        <span class="badge rounded-pill p-3" style="background-color: #fff0f3; color: #ff4d6d; border: 1px solid #ffb3c1;">PHP & MySQL</span>
                         <span class="badge rounded-pill p-3" style="background-color: #fff0f3; color: #ff4d6d; border: 1px solid #ffb3c1;">C++</span>
                         <span class="badge rounded-pill p-3" style="background-color: #fff0f3; color: #ff4d6d; border: 1px solid #ffb3c1;">Git & GitHub</span>
                     </div>
@@ -108,13 +114,26 @@
 
                 <!-- Projeler (Semantic: Section) -->
                 <section class="cv-card shadow-sm mb-4 p-4">
-                    <h4 class="mb-4" style="color: #ff4d6d;">🚀 Projeler & Deneyim</h4>
+                    <h4 class="mb-4 highlight-title">🚀 Projeler & Deneyim</h4>
                     <article class="ms-3">
-                        <h6 class="fw-bold">Web Teknolojileri Projesi</h6>
-                        <p class="text-muted">Bootstrap tabanlı kişisel portfolyo tasarımı ve geliştirilmesi.</p>
+                        <h6 class="fw-bold">🌐 Web Teknolojileri Akademik Projesi</h6>
+                        <p class="text-muted small">Sakarya Üniversitesi Web Teknolojileri dersi kapsamında geliştirilen; Bootstrap, HTML5, CSS3 ve PHP dilleri kullanılarak hazırlanan, API entegrasyonlu (Film/Spor veri çekme) ve kullanıcı giriş sistemli dinamik portfolyo sitesi projesi.</p>
                         
-                        <h6 class="fw-bold mt-3">Birim Dönüştürücü Uygulaması</h6>
-                        <p class="text-muted">C# Form ile termodinamik ve fiziksel birimlerin dönüşümünü sağlayan araç.</p>
+                        <h6 class="fw-bold mt-3">📏 C# Birim Dönüştürücü Uygulaması</h6>
+                        <p class="text-muted small">Fiziksel ve termodinamik birimlerin (Sıcaklık, Mesafe, Ağırlık vb.) birbirine dönüştürülmesini sağlayan, C# Form mimarisi ile geliştirilmiş kullanıcı dostu masaüstü aracı.</p>
+
+                        <h6 class="fw-bold">🎨 C# Nesneye Dayalı Çizim Uygulaması</h6>
+                        <p class="text-muted small">Dikdörtgen, daire ve elips gibi nesnelerin dinamik yönetimini sağlayan, dosya kayıt destekli tasarım aracı.</p>
+                        
+                        <h6 class="fw-bold mt-3">📐 C++ Geometrik Çarpışma Denetleyici</h6>
+                        <p class="text-muted small">2B/3B Kartezyen ve Polar koordinat sistemlerinde nesne etkileşimlerini analiz eden mühendislik kütüphanesi.</p>
+
+                        <h6 class="fw-bold mt-3">📊 C++ Akademik Başarı ve İstatistik Sistemi</h6>
+                        <p class="text-muted small">Sınıf ortalaması ve standart sapma hesaplayan, harf notu simülasyonu yapan yazılım.</p>
+
+                        <h6 class="fw-bold mt-3">💍 C++ Organizasyon Yönetim Sistemi</h6>
+                        <p class="text-muted small">İlişkili dosya yapısı kullanarak veritabanı mantığını simüle eden yönetim sistemi.</p>
+                        
                     </article>
                 </section>
 
