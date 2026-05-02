@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İLETİŞİM | Yağmur Aslanhan</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #fff0f3;
+            font-family: 'Quicksand', sans-serif;
+            color: #5c4d4d;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            color: white !important;
+        }
+
+        .btn-primary {
+            background-color: #ff4d6d !important;
+            border: none !important;
+            border-radius: 50px;
+        }
+
+        .cv-card {
+            background-color: white;
+            border-radius: 30px;
+            border: 2px solid #ffb3c1;
+            transition: transform 0.3s;
+        }
+
+        .cv-card:hover {
+            transform: translateY(-5px);
+        }
+
+        footer {
+            background-color: #ff85a2;
+            color: white;
+        }
+
+        .highlight-title {
+            color: #ff4d6d;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ff85a2 !important;">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">WEB PROJEM</a>
+        </div>
+    </nav>
+
+    <main id="app" class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="contact-card shadow-sm">
+                    <h3 class="text-center mb-4" style="color: #ff4d6d;">📬 İletişim Formu</h3>
+
+                    <form id="contactForm">
+                        <div class="mb-3">
+                            <label class="form-label">Ad Soyad:</label>
+                            <input type="text" id="name" v-model="formData.name" class="form-control"
+                                placeholder="Adınız...">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">E-posta:</label>
+                            <input type="text" id="email" v-model="formData.email" class="form-control"
+                                placeholder="e-posta@adresiniz.com">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Telefon:</label>
+                            <input type="text" id="phone" v-model="formData.phone" class="form-control"
+                                placeholder="05XXXXXXXXX">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Cinsiyet:</label>
+
+                            <div class="form-control d-flex gap-4 p-2 ps-3 bg-white">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gender" id="erkek"
+                                        v-model="formData.gender" value="erkek">
+                                    <label class="form-check-label" for="erkek">Erkek</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gender" id="kadin"
+                                        v-model="formData.gender" value="kadin">
+                                    <label class="form-check-label" for="kadin">Kadın</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Şehir:</label>
+                            <select class="form-control bg-white" v-model="formData.city" id="city">
+                                <option value="">Yaşadığınız şehri seçiniz...</option>
+                                <option value="74">Bartın</option>
+                                <option value="01">Adana</option>
+                                <option value="54">Sakarya</option>
+                                <option value="35">İzmir</option>
+                                <option value="34">İstanbul</option>
+                                <option value="06">Ankara</option>
+                                <option value="diger">Diğer</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Mesajınız:</label>
+                            <textarea id="message" v-model="formData.message" class="form-control" rows="3"></textarea>
+                        </div>
+
+                        <div class="row g-2 mt-4">
+                            <div class="col-md-6">
+                                <button type="button" onclick="validateWithJS()" class="btn btn-js w-100 p-3 shadow-sm">
+                                    JS ile Denetle & Gönder
+                                </button>
+                            </div>
+                            <div class="col-md-6">
+                                <button type="button" @click="validateWithVue" class="btn btn-vue w-100 p-3 shadow-sm">
+                                    Vue.js ile Denetle & Gönder
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // 1. YÖNTEM: PURE JAVASCRIPT DENETİMİ (Sol Buton)
+        function validateWithJS() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const phoneRegex = /^[0-9]+$/; // Sadece rakam (Ödev şartı)
+
+            if (!name || !email || !phone) {
+                alert("Hata (JS): Tüm alanlar doldurulmalıdır!");
+            } else if (!emailRegex.test(email)) {
+                alert("Hata (JS): E-posta formatı geçersiz!");
+            } else if (!phoneRegex.test(phone)) {
+                alert("Hata (JS): Telefon sadece rakamlardan oluşmalıdır!");
+            } else {
+                alert("Başarılı (JS): Verileriniz denetlendi ve gönderildi! ✨");
+            }
+        }
+
+        // 2. YÖNTEM: VUE.JS FRAMEWORK DENETİMİ (Sağ Buton)
+        const { createApp } = Vue;
+        createApp({
+            data() {
+                return {
+                    formData: { name: '', email: '', phone: '', message: '' }
+                }
+            },
+            methods: {
+                validateWithVue() {
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    const phoneRegex = /^[0-9]+$/;
+
+                    if (!this.formData.name || !this.formData.email || !this.formData.phone) {
+                        alert("Hata (Vue.js): Alanları boş bırakmayınız!");
+                    } else if (!emailRegex.test(this.formData.email)) {
+                        alert("Hata (Vue.js): Geçersiz e-posta!");
+                    } else if (!phoneRegex.test(this.formData.phone)) {
+                        alert("Hata (Vue.js): Telefon sadece rakam olmalı!");
+                    } else {
+                        alert("Başarılı (Vue.js): Framework denetimi tamamlandı, form gönderiliyor! 🚀");
+                    }
+                }
+            }
+        }).mount('#app');
+    </script>
+
+    <footer class="text-center py-4 mt-5">
+        <p class="mb-0">© 2026 Yağmur Aslanhan | SAÜ Bilgisayar Mühendisliği ✨</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
