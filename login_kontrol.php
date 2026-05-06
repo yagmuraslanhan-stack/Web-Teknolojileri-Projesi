@@ -15,8 +15,8 @@ $user_id = $_POST['user_id'];
 $password = $_POST['password'];
 
 // Kullanıcı bilgilerini kontrol ediyoruz (Burayı kendi bilgilerine göre güncelleyebilirsin)
-$dogru_user = "G241210000"; // Örnek öğrenci numaran
-$dogru_pass = "123456";    // Örnek şifren
+$dogru_user = "B251210033"; //öğrenci numaram
+$dogru_pass = "123456";    // Örnek şifrem
 
 if ($user_id == $dogru_user && $password == $dogru_pass) {
     // Başarılı giriş
