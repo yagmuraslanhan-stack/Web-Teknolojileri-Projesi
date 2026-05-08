@@ -7,6 +7,7 @@
     <title>İLETİŞİM | Yağmur Aslanhan</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.3.4/vue.global.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
@@ -77,22 +78,22 @@
                 <div class="contact-card shadow-sm">
                     <h3 class="text-center mb-4" style="color: #ff4d6d;">📬 İletişim Formu</h3>
 
-                    <form id="contactForm">
+                   <form id="contactForm" ref="myform" action="iletisim_kontrol.php" method="POST">
                         <div class="mb-3">
                             <label class="form-label">Ad Soyad:</label>
-                            <input type="text" id="name" v-model="formData.name" class="form-control"
+                            <input type="text" id="name" name="name" v-model="formData.name" class="form-control"
                                 placeholder="Adınız...">
                         </div>
 
                         <div class="mb-3">
                             <label class="form-label">E-posta:</label>
-                            <input type="text" id="email" v-model="formData.email" class="form-control"
+                            <input type="text" id="email" name="email" v-model="formData.email" class="form-control"
                                 placeholder="e-posta@adresiniz.com">
                         </div>
 
                         <div class="mb-3">
                             <label class="form-label">Telefon:</label>
-                            <input type="text" id="phone" v-model="formData.phone" class="form-control"
+                            <input type="text" id="phone" name="phone" v-model="formData.phone" class="form-control"
                                 placeholder="05XXXXXXXXX">
                         </div>
 
@@ -114,7 +115,7 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Şehir:</label>
-                            <select class="form-control bg-white" v-model="formData.city" id="city">
+                            <select class="form-control bg-white" name="city" v-model="formData.city" id="city">
                                 <option value="">Yaşadığınız şehri seçiniz...</option>
                                 <option value="74">Bartın</option>
                                 <option value="01">Adana</option>
@@ -128,7 +129,7 @@
 
                         <div class="mb-3">
                             <label class="form-label">Mesajınız:</label>
-                            <textarea id="message" v-model="formData.message" class="form-control" rows="3"></textarea>
+                            <textarea id="message" name="message" v-model="formData.message" class="form-control" rows="3"></textarea>
                         </div>
 
                         <div class="row g-2 mt-4">
@@ -150,50 +151,57 @@
     </main>
 
     <script>
-        // 1. YÖNTEM: PURE JAVASCRIPT DENETİMİ (Sol Buton)
-        function validateWithJS() {
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            const phoneRegex = /^[0-9]+$/; // Sadece rakam (Ödev şartı)
+       // 1. YÖNTEM: PURE JAVASCRIPT DENETİMİ
+    function validateWithJS() {
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const phoneRegex = /^[0-9]+$/;
 
-            if (!name || !email || !phone) {
-                alert("Hata (JS): Tüm alanlar doldurulmalıdır!");
-            } else if (!emailRegex.test(email)) {
-                alert("Hata (JS): E-posta formatı geçersiz!");
-            } else if (!phoneRegex.test(phone)) {
-                alert("Hata (JS): Telefon sadece rakamlardan oluşmalıdır!");
-            } else {
-                alert("Başarılı (JS): Verileriniz denetlendi ve gönderildi! ✨");
+        if (!name || !email || !phone) {
+            alert("Hata (JS): Tüm alanlar doldurulmalıdır!");
+        } else if (!emailRegex.test(email)) {
+            alert("Hata (JS): E-posta formatı geçersiz!");
+        } else if (!phoneRegex.test(phone)) {
+            alert("Hata (JS): Telefon sadece rakamlardan oluşmalıdır!");
+        } else {
+            alert("Başarılı (JS): Verileriniz denetlendi ve gönderildi! ✨");
+            document.getElementById('contactForm').submit();
+        }
+    }
+
+    // 2. YÖNTEM: VUE.JS FRAMEWORK DENETİMİ
+    const { createApp } = Vue;
+    createApp({
+        data() {
+            return {
+                formData: { name: '', email: '', phone: '', message: '', gender: 'erkek', city: '' }
+            }
+        },
+        // SİHİRLİ TEST KISMI BURASI:
+        mounted() {
+            alert("VUE.JS HAYATTA! 🎉 Eğer bu mesajı görüyorsan sağdaki buton artık çalışacaktır!");
+        },
+        methods: {
+            validateWithVue() {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                const phoneRegex = /^[0-9]+$/;
+
+                if (!this.formData.name || !this.formData.email || !this.formData.phone) {
+                    alert("Hata (Vue.js): Alanları boş bırakmayınız!");
+                } else if (!emailRegex.test(this.formData.email)) {
+                    alert("Hata (Vue.js): Geçersiz e-posta!");
+                } else if (!phoneRegex.test(this.formData.phone)) {
+                    alert("Hata (Vue.js): Telefon sadece rakam olmalı!");
+                } else {
+                    alert("Başarılı (Vue.js): Denetim tamamlandı, PHP'ye yönleniyor! 🚀");
+                    const formElement = document.getElementById('contactForm');
+                    if (formElement) formElement.submit();
+                }
             }
         }
-
-        // 2. YÖNTEM: VUE.JS FRAMEWORK DENETİMİ (Sağ Buton)
-        const { createApp } = Vue;
-        createApp({
-            data() {
-                return {
-                    formData: { name: '', email: '', phone: '', message: '' }
-                }
-            },
-            methods: {
-                validateWithVue() {
-                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                    const phoneRegex = /^[0-9]+$/;
-
-                    if (!this.formData.name || !this.formData.email || !this.formData.phone) {
-                        alert("Hata (Vue.js): Alanları boş bırakmayınız!");
-                    } else if (!emailRegex.test(this.formData.email)) {
-                        alert("Hata (Vue.js): Geçersiz e-posta!");
-                    } else if (!phoneRegex.test(this.formData.phone)) {
-                        alert("Hata (Vue.js): Telefon sadece rakam olmalı!");
-                    } else {
-                        alert("Başarılı (Vue.js): Framework denetimi tamamlandı, form gönderiliyor! 🚀");
-                    }
-                }
-            }
-        }).mount('#app');
+    }).mount('#app');
     </script>
 
     <footer class="text-center py-4 mt-5">
