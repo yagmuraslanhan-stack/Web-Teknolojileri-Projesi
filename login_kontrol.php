@@ -14,14 +14,25 @@
 $user_id = $_POST['user_id'];
 $password = $_POST['password'];
 
-// Kullanıcı bilgilerini kontrol ediyoruz (Burayı kendi bilgilerine göre güncelleyebilirsin)
-$dogru_user = "B251210033"; //öğrenci numaram
-$dogru_pass = "123456";    // Örnek şifrem
+$dogru_user = "b251210033@sakarya.edu.tr"; // Kullanıcı adı: Mail adresi formatında
+$dogru_pass = "b251210033";              // Şifre: Sadece öğrenci numarası
 
-if ($user_id == $dogru_user && $password == $dogru_pass) {
+// BOŞLUK KONTROLÜ
+if (empty($user_id) || empty($password)) {
+    echo "<div style='text-align:center; margin-top:100px; font-family:Quicksand; color:#ff4d6d;'>";
+    echo "<h2>Hata!</h2>";
+    echo "<p>Alanlar boş bırakılamaz!</p>";
+    echo "<p>Lütfen tekrar deneyiniz. Giriş sayfasına dönülüyor...</p>";
+    echo "</div>";
+    header("Refresh: 3; url=login.html");
+    exit(); // Kodun devamını çalıştırma
+}
+
+// BİLGİ DOĞRULAMA
+if ($user_id === $dogru_user && $password === $dogru_pass) {
     // Başarılı giriş
     echo "<div style='text-align:center; margin-top:100px; font-family:Quicksand; color:#ff4d6d;'>";
-    echo "<h2>Hoş Geldiniz '" . $user_id . "'</h2>";
+    echo "<h2>Hoşgeldiniz b251210033</h2>"; // Ödev şartı: "Hoşgeldiniz [Öğrenci No]"
     echo "<p>Giriş işleminiz başarıyla tamamlandı. Ana sayfaya yönlendiriliyorsunuz...</p>";
     echo "</div>";
     header("Refresh: 3; url=index.html");
