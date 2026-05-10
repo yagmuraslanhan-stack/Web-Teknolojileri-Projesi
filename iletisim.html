@@ -95,6 +95,11 @@
                             <textarea id="message" name="message" v-model="formData.message" class="form-control" rows="3"></textarea>
                         </div>
 
+                        <div class="mb-4 form-check text-start">
+                            <input type="checkbox" class="form-check-input" id="terms" v-model="formData.terms">
+                            <label class="form-check-label" for="terms">Kullanım koşullarını okudum ve onaylıyorum.</label>
+                        </div>
+
                         <div class="row g-2 mt-4">
                             <div class="col-md-6">
                                 <button type="button" onclick="validateWithJS()" class="btn btn-secondary w-100 p-3 shadow-sm">
@@ -119,6 +124,10 @@
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const phone = document.getElementById('phone').value;
+            
+            // Onay kutusunun işaretli olup olmadığını kontrol ediyoruz
+            const termsChecked = document.getElementById('terms').checked; 
+
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             const phoneRegex = /^[0-9]+$/;
 
@@ -128,6 +137,9 @@
                 alert("Hata (JS): E-posta formatı geçersiz!");
             } else if (!phoneRegex.test(phone)) {
                 alert("Hata (JS): Telefon sadece rakamlardan oluşmalıdır!");
+            } else if (!termsChecked) { 
+                // YENİ EKLENEN ŞART: Eğer onay kutusu işaretli değilse
+                alert("Hata (JS): Kullanım koşullarını onaylamalısınız!");
             } else {
                 alert("Başarılı (JS): Verileriniz denetlendi ve gönderildi! ✨");
                 document.getElementById('contactForm').submit();
@@ -146,7 +158,8 @@
                 Vue.createApp({
                     data() {
                         return {
-                            formData: { name: '', email: '', phone: '', message: '', gender: '', city: '' }
+                            // YENİ EKLENEN VERİ: terms: false (başlangıçta işaretli değil)
+                            formData: { name: '', email: '', phone: '', message: '', gender: '', city: '', terms: false }
                         }
                     },
                     methods: {
@@ -160,6 +173,9 @@
                                 alert("Hata (Vue.js): Geçersiz e-posta!");
                             } else if (!phoneRegex.test(this.formData.phone)) {
                                 alert("Hata (Vue.js): Telefon sadece rakam olmalı!");
+                            } else if (!this.formData.terms) {
+                                // YENİ EKLENEN ŞART: Eğer formData içindeki terms false ise
+                                alert("Hata (Vue.js): Kullanım koşullarını onaylamalısınız!");
                             } else {
                                 alert("Başarılı (Vue.js): Denetim tamamlandı, PHP'ye yönleniyor! 🚀");
                                 const formElement = document.getElementById('contactForm');

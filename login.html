@@ -46,6 +46,14 @@
             color: #ff4d6d;
             font-weight: bold;
         }
+
+        .login-card {
+            background-color: white;
+            border-radius: 30px;
+            border: 2px solid #ffb3c1;
+            padding: 40px;
+            margin-top: 50px;
+        }
     </style>
 </head>
 <body>
@@ -62,17 +70,38 @@
                     <h3 class="fw-bold mb-4" style="color: #ff4d6d;">🔐 Üye Girişi</h3>
                     <p class="text-muted mb-4">Lütfen öğrenci numaranız ve şifrenizle giriş yapınız.</p>
                     
-                    <form action="login_kontrol.php" method="POST" id="loginForm">
-                        <div class="mb-3">
-                            <input type="text" name="user_id" class="form-control" placeholder="ÖğrenciNumarası@sakarya.edu.tr" required>
-                        </div>
-                        <div class="mb-4">
-                            <input type="password" name="password" class="form-control" placeholder="Şifre" required>
-                        </div>
-                        <div class="d-grid">
-                           <button type="submit" class="btn btn-pink shadow-sm">Giriş Yap ✨</button>
-                        </div>
-                    </form>
+                    <form action="login_kontrol.php" method="POST" id="loginForm" onsubmit="return validateLogin(event)">
+    <div class="mb-3">
+        <input type="text" id="loginEmail" name="user_id" class="form-control" placeholder="Örn: b251210033@sakarya.edu.tr">
+    </div>
+    <div class="mb-4">
+        <input type="password" id="loginPass" name="password" class="form-control" placeholder="Şifre">
+    </div>
+    <div class="d-grid">
+        <button type="submit" class="btn btn-primary shadow-sm text-white">Giriş Yap ✨</button>
+    </div>
+</form>
+
+<script>
+    function validateLogin(e) {
+        const email = document.getElementById('loginEmail').value;
+        const pass = document.getElementById('loginPass').value;
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Mail formatı kontrolü
+
+        if (!email || !pass) {
+            alert("Hata: Kullanıcı adı (e-posta) veya şifre boş bırakılamaz!");
+            e.preventDefault(); // Formun gitmesini engeller
+            return false;
+        }
+        
+        if (!emailRegex.test(email)) {
+            alert("Hata: Lütfen geçerli bir e-posta formatı giriniz! (Örn: b251210033@sakarya.edu.tr)");
+            e.preventDefault(); 
+            return false;
+        }
+        return true; // Sorun yoksa PHP'ye gönder
+    }
+</script>
                     
                     <div class="mt-4 small">
                         <a href="#" style="color: #ff85a2; text-decoration: none;">Şifremi Unuttum?</a>

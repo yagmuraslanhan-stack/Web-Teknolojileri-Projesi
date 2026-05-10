@@ -6,45 +6,18 @@
     <title>HAKKIMDA | Yağmur Aslanhan</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"> 
+    
     <style>
-        body {
-            background-color: #fff0f3; /* Açık pembe arka plan */
-            font-family: 'Quicksand', sans-serif;
-            color: #5c4d4d;
-        }
-        .navbar-brand {
-            font-weight: bold;
-            color: white !important;
-        }
-        /* Profil kartı tasarımı */
-        .profile-card {
-            background-color: white;
-            padding: 20px;
-            border-radius: 30px;
-            border: 2px solid #ffb3c1;
-            transition: transform 0.3s;
-        }
-        .profile-card:hover {
-            transform: scale(1.02);
-        }
-        /* Liste öğeleri */
-        .list-group-item {
-            background-color: transparent;
-            border-bottom: 1px dashed #ffb3c1 !important;
-            border-left: none;
-            border-right: none;
-            border-top: none;
-            padding: 12px 10px;
-        }
-        /* Buton rengi */
-        .btn-primary {
-            background-color: #ff4d6d !important;
-            border: none !important;
-            border-radius: 50px;
-        }
+        body { background-color: #fff0f3; font-family: 'Quicksand', sans-serif; color: #5c4d4d; }
+        .navbar-brand { font-weight: bold; color: white !important; }
+        .profile-card { background-color: white; padding: 20px; border-radius: 30px; border: 2px solid #ffb3c1; transition: transform 0.3s; }
+        .profile-card:hover { transform: scale(1.02); }
+        .list-group-item { background-color: transparent; border-bottom: 1px dashed #ffb3c1 !important; border-left: none; border-right: none; border-top: none; padding: 12px 10px; }
+        .btn-primary { background-color: #ff4d6d !important; border: none !important; border-radius: 50px; }
+        .social-link { color: #ff85a2; font-size: 1.5rem; margin: 0 10px; transition: color 0.3s; }
+        .social-link:hover { color: #ff4d6d; }
     </style>
 </head>
 <body>
@@ -71,21 +44,29 @@
         <div class="row">
             <div class="col-md-4 text-center mb-4">
                 <div class="profile-card shadow-sm">
-                    <img src="profil.jpg.jpeg" class="img-fluid rounded-rectangle shadow-sm border border-4 border-white" alt="Yağmur Aslanhan">
+                    <img src="profil.jpg.jpeg" class="img-fluid rounded shadow-sm border border-4 border-white mb-3" alt="Yağmur Aslanhan">
                     <h3 class="mt-3">Yağmur Aslanhan</h3>
                     <p class="text-muted">Bilgisayar Mühendisliği Öğrencisi</p>
+                    
+                    <div class="mt-4 border-top pt-3" style="border-color: #ffb3c1 !important;">
+                        <h6 style="color: #ff4d6d;">Bana Ulaşın 🔗</h6>
+                        <a href="https://github.com/yagmuraslanhan-stack" target="_blank" class="social-link"><i class="bi bi-github"></i></a>
+                        <a href="https://www.linkedin.com/" target="_blank" class="social-link"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://www.instagram.com/ymr_aslnhn?igsh=MTk1Y3NiNHdrM2I3YQ==" target="_blank" class="social-link"><i class="bi bi-instagram"></i></a>
+                    </div>
                 </div>
             </div>
 
             <div class="col-md-8">
-                <div class="bg-white p-4 rounded-4 shadow-sm border border-pink" style="border: 2px solid #ffb3c1;">
+                <div class="bg-white p-4 rounded-4 shadow-sm border border-pink mb-4" style="border: 2px solid #ffb3c1;">
                     <h2 class="border-bottom pb-2" style="color: #ff4d6d;">Hakkımda ✨</h2>
                     <p class="lead mt-3">
                         Merhaba! Ben Yağmur. Sakarya Üniversitesi Bilgisayar Mühendisliği bölümü öğrencisiyim. 
                         Web teknolojileri dersi kapsamında bu projeyi geliştiriyorum.
                     </p>
+                    
                     <h4 class="mt-4" style="color: #ff4d6d;">Neler Yapmayı Severim? 🎀</h4>
-                    <ul class="list-group list-group-flush">
+                    <ul class="list-group list-group-flush mb-4">
                         <li class="list-group-item">🎮 Online Oyunlar Oynamak</li>
                         <li class="list-group-item">🎨 Resim Çizmek</li>
                         <li class="list-group-item">🎬 Dizi ve Film İzlemek</li>
@@ -93,13 +74,110 @@
                         <li class="list-group-item">👩🏻‍💻 Kod Yazmak</li>
                         <li class="list-group-item">📸 Gökyüzü Fotoğrafları Çekmek</li>
                     </ul>
+
+                    <h4 class="mt-4" style="color: #ff4d6d;">Favori Şarkım 🎧</h4>
+                    <div class="ratio ratio-16x9 rounded overflow-hidden shadow-sm border border-2 mb-5" style="border-color: #ffb3c1 !important;">
+                        <iframe src="https://www.youtube.com/embed/utAPBsSRY4U" title="YouTube video player" allowfullscreen></iframe>
+                    </div>
+
+                    <h4 class="mt-4 border-top pt-4" style="color: #ff4d6d; border-color: #ffb3c1 !important;">🎬 Dizi/Film Keşfi</h4>
+                    <p class="text-muted small mb-3">İnternet üzerinden anlık veri çekilmektedir.</p>
+                    
+                    <div class="input-group mb-4 shadow-sm">
+                        <input type="text" id="movieSearch" class="form-control" placeholder="İngilizce bir dizi adı yazın (Örn: The Office)..." style="border-color: #ffb3c1;">
+                        <button class="btn btn-primary px-4" type="button" onclick="fetchMovieData()">Ara 🚀</button>
+                    </div>
+
+                    <div id="movieResult" class="card border-0 shadow-sm" style="display: none; background-color: #fff0f3; border-radius: 20px;">
+                        <div class="row g-0 align-items-center p-3">
+                            <div class="col-md-3 text-center">
+                                <img id="moviePoster" src="" alt="Afiş" class="img-fluid rounded shadow" style="max-height: 200px;">
+                            </div>
+                            <div class="col-md-9">
+                                <div class="card-body py-0">
+                                    <h4 id="movieTitle" class="card-title fw-bold" style="color: #ff4d6d;"></h4>
+                                    <p id="movieGenre" class="badge bg-secondary mb-2"></p>
+                                    <div id="movieSummary" class="card-text small text-muted" style="text-align: justify;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="movieError" class="alert text-danger text-center mt-2 fw-bold shadow-sm" style="display: none; background-color: #fff0f3; border-radius: 15px; border: 1px dashed #ff4d6d;">
+                        ❌ Dizi bulunamadı, lütfen geçerli bir isim deneyin!
+                    </div>
+
                 </div>
             </div>
         </div>
     </div>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function fetchMovieData() {
+            const query = document.getElementById('movieSearch').value;
+            if(!query) return alert("Lütfen aramak için bir dizi adı yazın!");
+
+            const resultDiv = document.getElementById('movieResult');
+            const errorDiv = document.getElementById('movieError');
+
+            // API'den veri gelirken kullanıcıya bilgi verelim
+            document.getElementById('movieSummary').innerHTML = "<i>⏳ Veriler çekiliyor ve Türkçe'ye çevriliyor, lütfen bekleyin...</i>";
+            resultDiv.style.display = "flex";
+            errorDiv.style.display = "none";
+
+            // 1. AŞAMA: TVMaze API'sinden diziyi bul (İngilizce)
+            fetch(`https://api.tvmaze.com/search/shows?q=${query}`)
+                .then(response => response.json())
+                .then(data => {
+                    if(data.length > 0) {
+                        const show = data[0].show; 
+                        
+                        document.getElementById('movieTitle').innerText = show.name;
+                        document.getElementById('movieGenre').innerText = show.genres.join(", ") || "Tür Belirtilmedi";
+                        
+                        const poster = document.getElementById('moviePoster');
+                        if(show.image && show.image.medium) {
+                            poster.src = show.image.medium;
+                            poster.style.display = "inline-block";
+                        } else {
+                            poster.style.display = "none";
+                        }
+
+                        // 2. AŞAMA: ÖZETİ TÜRKÇEYE ÇEVİR (MyMemory API)
+                        if(show.summary) {
+                            // TVMaze özetinde HTML etiketleri var (<p>, <b> vb.), çeviri bozulmasın diye onları temizliyoruz
+                            const cleanSummary = show.summary.replace(/<[^>]*>?/gm, '');
+                            
+                            // İkinci bir API'ye istek atıp İngilizce metni Türkçe'ye çeviriyoruz!
+                            fetch(`https://api.mymemory.translated.net/get?q=${encodeURIComponent(cleanSummary)}&langpair=en|tr`)
+                                .then(res => res.json())
+                                .then(transData => {
+                                    document.getElementById('movieSummary').innerText = transData.responseData.translatedText;
+                                })
+                                .catch(err => {
+                                    // Çeviri API'si o an yoğunsa orijinal İngilizce metni göster
+                                    document.getElementById('movieSummary').innerText = cleanSummary + "\n\n(Not: Çeviri servisi şu an meşgul olduğu için orijinal metin gösteriliyor.)";
+                                });
+                        } else {
+                            document.getElementById('movieSummary').innerText = "Bu dizi için özet bulunmamaktadır.";
+                        }
+
+                    } else {
+                        resultDiv.style.display = "none";
+                        errorDiv.style.display = "block";
+                    }
+                })
+                .catch(error => {
+                    console.error("API Hatası:", error);
+                    alert("İnternet bağlantısından kaynaklı bir hata oluştu.");
+                });
+        }
+    </script>
+
     <footer class="text-center py-4 mt-5" style="background-color: #ff85a2; color: white;">
-    <p>© 2026 Yağmur Aslanhan | Sakarya Üniversitesi Bilgisayar Mühendisliği ✨</p>
-</footer>
+        <p>© 2026 Yağmur Aslanhan | Sakarya Üniversitesi Bilgisayar Mühendisliği ✨</p>
+    </footer>
 </body>
 </html>
