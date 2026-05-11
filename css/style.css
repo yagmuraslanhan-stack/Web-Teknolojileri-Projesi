@@ -28,7 +28,7 @@ footer {
 }
 
 /* --- KART TASARIMLARI (Profil, CV, Login, İletişim) --- */
-.profile-card, .cv-card, .contact-card, .login-card { 
+.profile-card, .cv-card, .contact-card, .login-card, .card { 
     background-color: white; 
     padding: 20px; 
     border-radius: 30px; 
