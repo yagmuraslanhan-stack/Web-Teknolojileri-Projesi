@@ -68,3 +68,16 @@ footer {
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(255, 77, 109, 0.2);
 }
+
+/* Slider Resimlerini Sabitleme */
+.carousel-item img {
+    height: 500px; 
+    object-fit: cover; 
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .carousel-item img {
+        height: 300px;
+    }
+}
