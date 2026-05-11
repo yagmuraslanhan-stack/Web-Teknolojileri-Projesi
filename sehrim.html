@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Navigasyon (Semantic: nav) -->
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ff85a2 !important; border-bottom: 3px solid #fbb1bd;">
         <div class="container">
             <a class="navbar-brand" href="index.html">WEB PROJEM</a>
@@ -29,14 +28,12 @@
     </nav>
 
     <main class="container mt-5">
-        <!-- Başlık (Semantic: header) -->
-        <header class="p-5 mb-4 rounded-5 text-center text-white shadow-sm" style="background: linear-gradient(135deg, #ff85a2, #fbb1bd);">
+        <header class="p-5 mb-5 rounded-5 text-center text-white shadow-sm" style="background: linear-gradient(135deg, #ff85a2, #fbb1bd);">
             <h2 class="fw-bold">📍 Adana: Kültür, Tarih ve Lezzet</h2>
-            <p class="lead">Bir Seyhanlı olarak şehrimin güzelliklerini keşfedin ✨</p>
+            <p class="lead mb-0">Bir Seyhanlı olarak şehrimin güzelliklerini keşfedin ✨</p>
         </header>
 
-        <!-- Kültür, Tarih ve Yemek Slider (Semantic: section) -->
-        <section class="city-card p-4 shadow-sm">
+        <section class="card p-4 shadow-sm mb-4">
             <h3 class="mb-4 text-center" style="color: #ff4d6d;">📸 Adana'nın Renkleri 🎀</h3>
             <div id="adanaSlider" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-indicators">
@@ -50,143 +47,124 @@
                     <button type="button" data-bs-target="#adanaSlider" data-bs-slide-to="7"></button>
                     <button type="button" data-bs-target="#adanaSlider" data-bs-slide-to="8"></button>
                 </div>
-    <div id="adanaSlider" class="carousel slide" data-bs-ride="carousel">
         
-        <!-- Tek bir inner kapsayıcısı olmalı -->
-        <div class="carousel-inner">
-            
-            <!-- 1. Sabancı Merkez Camii (Sadece bu 'active') -->
-            <div class="carousel-item active">
-                <a href="https://tr.wikipedia.org/wiki/Sabanc%C4%B1_Merkez_Camii" target="_blank" class="d-block" title="Daha fazla bilgi için tıklayın">
-                <img src="sabanci.jpg.png" class="d-block w-100" alt="Sabancı Merkez Camii">
-                </a>
-                <div class="carousel-caption">
-                    <h5>Sabancı Merkez Camii</h5>
-                    <p>Seyhan Nehri kıyısında, 6 minaresiyle şehrimizin en görkemli simgesi.</p>
-                </div>
+                <div class="carousel-inner">
+                    
+                    <div class="carousel-item active">
+                        <a href="https://tr.wikipedia.org/wiki/Sabanc%C4%B1_Merkez_Camii" target="_blank" class="d-block" title="Daha fazla bilgi için tıklayın">
+                        <img src="sabanci.jpg.png" class="d-block w-100 rounded-3" alt="Sabancı Merkez Camii">
+                        </a>
+                        <div class="carousel-caption">
+                            <h5>Sabancı Merkez Camii</h5>
+                            <p>Seyhan Nehri kıyısında, 6 minaresiyle şehrimizin en görkemli simgesi.</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <a href="https://tr.wikipedia.org/wiki/Ta%C5%9Fk%C3%B6pr%C3%BC_(Adana)" target="_blank" class="d-block" title="Daha fazla bilgi için tıklayın">
+                        <img src="taskopru.jpg.png" class="d-block w-100 rounded-3" alt="Taşköprü">
+                        </a>
+                        <div class="carousel-caption">
+                            <h5>Taşköprü</h5>
+                            <p>Dünyada hala araç trafiğine açık olan en eski köprülerden biri.</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <a href="https://www.google.com/maps/search/Adana+Menderes+Bulvar%C4%B1" target="_blank" class="d-block" title="Haritada gör">
+                        <img src="menderes.jpg.png" class="d-block w-100 rounded-3" alt="Menderes">
+                        </a>
+                        <div class="carousel-caption">
+                            <h5>Menderes</h5>
+                            <p>Seyhan Baraj Gölü kıyısında, gün batımına karşı huzurlu bir yürüyüş ve bici bici için şehrin en popüler kaçış noktası.</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <a href="https://tr.wikipedia.org/wiki/B%C3%BCy%C3%BCk_Saat" target="_blank" class="d-block" title="Daha fazla bilgi için tıklayın">
+                        <img src="buyuksaat.jpg.png" class="d-block w-100 rounded-3" alt="Büyük Saat">
+                        </a>
+                        <div class="carousel-caption">
+                            <h5>Büyük Saat</h5>
+                            <p>1882 yılında inşa edilen ve 32 metre yüksekliğine sahip olan şehrin en yüksek saat kulesi.</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <a href="https://www.nisandaadanada.com/" target="_blank" class="d-block" title="Resmi sitesine git">
+                        <img src="portakalcicegifestivali.jpg.png" class="d-block w-100 rounded-3" alt="Portakal Çiçeği Festivali">
+                        </a>
+                        <div class="carousel-caption">
+                            <h5>Portakal Çiçeği Festivali</h5>
+                            <p>Şehrin her yanını saran portakal çiçeği kokusuyla unutulmaz bir karnaval.</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <a href="https://altinkozaff.org.tr/" target="_blank" class="d-block" title="Resmi sitesine git">
+                        <img src="altinkozafilmfestivali.jpg.png" class="d-block w-100 rounded-3" alt="Altın Koza Film Festivali">
+                        </a>
+                        <div class="carousel-caption">
+                            <h5>Altın Koza Film Festivali</h5>
+                            <p>Çukurova'nın bereketli topraklarından beyaz perdeye uzanan sanat yolculuğu.</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <a href="https://tr.wikipedia.org/wiki/Adana_kebab%C4%B1" target="_blank" class="d-block" title="Daha fazla bilgi için tıklayın">
+                        <img src="kebap.jpg.png" class="d-block w-100 rounded-3" alt="Adana Kebap">
+                        </a>
+                        <div class="carousel-caption">
+                            <h5>Adana Kebabı</h5>
+                            <p>Gerçek zırh kıyması; sadece bir yemek değil, bir kültür mirası.</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <a href="https://tr.wikipedia.org/wiki/Bici_bici" target="_blank" class="d-block" title="Daha fazla bilgi için tıklayın">
+                        <img src="bicibici.jpg.png" class="d-block w-100 rounded-3" alt="Bici Bici">
+                        </a>
+                        <div class="carousel-caption">
+                            <h5>Bici Bici</h5>
+                            <p>Gül suyu, pudra şekeri ve karın ferahlatıcı buluşması.</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <a href="https://tr.wikipedia.org/wiki/T%C3%BCrk_halk_oyunlar%C4%B1" target="_blank" class="d-block" title="Daha fazla bilgi için tıklayın">
+                        <img src="halkoyunlari.jpg.png" class="d-block w-100 rounded-3" alt="Halk Oyunları">
+                        </a>
+                        <div class="carousel-caption">
+                            <h5>Adana Halk Oyunları</h5>
+                            <p>Bereketli toprakların coşkusunu yansıtan geleneksel oyunlarımız.</p>
+                        </div>
+                    </div>
+
+                </div> <button class="carousel-control-prev" type="button" data-bs-target="#adanaSlider" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#adanaSlider" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
             </div>
+        </section>
 
-            <!-- 2. Taşköprü -->
-            <div class="carousel-item">
-                <a href="https://tr.wikipedia.org/wiki/Ta%C5%9Fk%C3%B6pr%C3%BC_(Adana)" target="_blank" class="d-block" title="Daha fazla bilgi için tıklayın">
-                <img src="taskopru.jpg.png" class="d-block w-100" alt="Taşköprü">
-                </a>
-                <div class="carousel-caption">
-                    <h5>Taşköprü</h5>
-                    <p>Dünyada hala araç trafiğine açık olan en eski köprülerden biri.</p>
-                </div>
-            </div>
-
-            <!-- 3. Menderes -->
-            <div class="carousel-item">
-                <a href="https://www.google.com/maps/search/Adana+Menderes+Bulvar%C4%B1" target="_blank" class="d-block" title="Haritada gör">
-                <img src="menderes.jpg.png" class="d-block w-100" alt="Menderes">
-                </a>
-                <div class="carousel-caption">
-                    <h5>Menderes</h5>
-                    <p>Seyhan Baraj Gölü kıyısında, gün batımına karşı huzurlu bir yürüyüş ve bici bici için şehrin en popüler kaçış noktası.</p>
-                </div>
-            </div>
-
-            <!-- 4. Büyük Saat -->
-            <div class="carousel-item">
-                <a href="https://tr.wikipedia.org/wiki/B%C3%BCy%C3%BCk_Saat" target="_blank" class="d-block" title="Daha fazla bilgi için tıklayın">
-                <img src="buyuksaat.jpg.png" class="d-block w-100" alt="Büyük Saat">
-                </a>
-                <div class="carousel-caption">
-                    <h5>Büyük Saat</h5>
-                    <p>1882 yılında inşa edilen ve 32 metre yüksekliğine sahip olan şehrin en yüksek saat kulesi.</p>
-                </div>
-            </div>
-
-            <!-- 5. Portakal Çiçeği Festivali -->
-            <div class="carousel-item">
-                <a href="https://www.nisandaadanada.com/" target="_blank" class="d-block" title="Resmi sitesine git">
-                <img src="portakalcicegifestivali.jpg.png" class="d-block w-100" alt="Portakal Çiçeği Festivali">
-                </a>
-                <div class="carousel-caption">
-                    <h5>Portakal Çiçeği Festivali</h5>
-                    <p>Şehrin her yanını saran portakal çiçeği kokusuyla unutulmaz bir karnaval.</p>
-                </div>
-            </div>
-
-            <!-- 6. Altın Koza Film Festivali -->
-            <div class="carousel-item">
-                <a href="https://altinkozaff.org.tr/" target="_blank" class="d-block" title="Resmi sitesine git">
-                <img src="altinkozafilmfestivali.jpg.png" class="d-block w-100" alt="Altın Koza Film Festivali">
-                </a>
-                <div class="carousel-caption">
-                    <h5>Altın Koza Film Festivali</h5>
-                    <p>Çukurova'nın bereketli topraklarından beyaz perdeye uzanan sanat yolculuğu.</p>
-                </div>
-            </div>
-
-            <!-- 7. Adana Kebap -->
-            <div class="carousel-item">
-                <a href="https://tr.wikipedia.org/wiki/Adana_kebab%C4%B1" target="_blank" class="d-block" title="Daha fazla bilgi için tıklayın">
-                <img src="kebap.jpg.png" class="d-block w-100" alt="Adana Kebap">
-                </a>
-                <div class="carousel-caption">
-                    <h5>Adana Kebabı</h5>
-                    <p>Gerçek zırh kıyması; sadece bir yemek değil, bir kültür mirası.</p>
-                </div>
-            </div>
-
-            <!-- 8. Bici Bici -->
-            <div class="carousel-item">
-                <a href="https://tr.wikipedia.org/wiki/Bici_bici" target="_blank" class="d-block" title="Daha fazla bilgi için tıklayın">
-                <img src="bicibici.jpg.png" class="d-block w-100" alt="Bici Bici">
-                </a>
-                <div class="carousel-caption">
-                    <h5>Bici Bici</h5>
-                    <p>Gül suyu, pudra şekeri ve karın ferahlatıcı buluşması.</p>
-                </div>
-            </div>
-
-            <!-- 9. Halk Oyunları -->
-            <div class="carousel-item">
-                <a href="https://tr.wikipedia.org/wiki/T%C3%BCrk_halk_oyunlar%C4%B1" target="_blank" class="d-block" title="Daha fazla bilgi için tıklayın">
-                <img src="halkoyunlari.jpg.png" class="d-block w-100" alt="Halk Oyunları">
-                </a>
-                <div class="carousel-caption">
-                    <h5>Adana Halk Oyunları</h5>
-                    <p>Bereketli toprakların coşkusunu yansıtan geleneksel oyunlarımız.</p>
-                </div>
-            </div>
-
-        </div> <!-- carousel-inner sonu -->
-
-        <!-- Kontrol Butonları -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#adanaSlider" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#adanaSlider" data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
-        </button>
-    </div>
-</section>
-
-        <!-- Detaylı Adana ve Seyhan Tanıtımı (Semantic: section) -->
-        <section class="row g-4">
+        <section class="row g-4 mb-4">
             <div class="col-md-12">
-                <article class="city-card p-4 shadow-sm">
+                <article class="card p-4 shadow-sm">
                     <h4 class="highlight-text">📜 Adana Kültür Dosyası</h4>
                     <p>Adana, sadece lezzetin değil, derin bir tarihin de merkezidir. Şehrimiz, Roma döneminden kalma antik yollardan modern parklara kadar geniş bir yelpaze sunar.</p>
-                    <p><span class="highlight-text">✨Taşköprü:</span> Roma İmparatoru Hadrianus tarafından yaptırılan bu köprü, dünyada hala araç ve yaya tarfiğine açık olan en eski
-                    köprülerden biri olarak kabul edilir.Seyhan Nehri üzerinde şehri ikiye bağlayan muazzam bir simgedir.</p>
+                    <p><span class="highlight-text">✨Taşköprü:</span> Roma İmparatoru Hadrianus tarafından yaptırılan bu köprü, dünyada hala araç ve yaya tarfiğine açık olan en eski köprülerden biri olarak kabul edilir.Seyhan Nehri üzerinde şehri ikiye bağlayan muazzam bir simgedir.</p>
                     <p><span class="highlight-text">✨Sabancı Merkez Camii:</span> Orta Doğu'nun en büyük camiilerinden biri olan bu yapı, görkemli minareleriyle şehrin silüetini belirler.</p>
-                    <p><span class="highlight-text">✨Menderes:</span> Seyhan Baraj Gölü'nün kıyısı boyunca uzanır. Göl manzarasına karşı yürüyüş ve bisiklet yollarıyla doludur. Adana'nın meşhur buzlu tatlısı bici biciyi yemek ya da göl kıyısındaki kafelerde 
-                        vakit geçirmek buranın klasiğidir. Bulvar üzerinden Sevgi Adası'nı görebilir, mevsime göre kayıklarla adaya geçebilirsiniz.</p>
-                    <p><span class="highlight-text">✨Büyük Saat:</span> 1881 yılında Vali Ziya Paşa tarafından inşasına başlanmış, 1882 yılında Vali Abidin Paşa döneminde tamamlanmıştır. 32 metre yüksekliği ile Türkiye'nin en uzun saat kulesidir. 
-                        Temelinin 35 metre derinliğe kadar indiği söylenir. O kadar sağlam bir yapıdır ki, 1998 Adana depreminde bile zarar görmemiştir.</p>
+                    <p><span class="highlight-text">✨Menderes:</span> Seyhan Baraj Gölü'nün kıyısı boyunca uzanır. Göl manzarasına karşı yürüyüş ve bisiklet yollarıyla doludur. Adana'nın meşhur buzlu tatlısı bici biciyi yemek ya da göl kıyısındaki kafelerde vakit geçirmek buranın klasiğidir. Bulvar üzerinden Sevgi Adası'nı görebilir, mevsime göre kayıklarla adaya geçebilirsiniz.</p>
+                    <p><span class="highlight-text">✨Büyük Saat:</span> 1881 yılında Vali Ziya Paşa tarafından inşasına başlanmış, 1882 yılında Vali Abidin Paşa döneminde tamamlanmıştır. 32 metre yüksekliği ile Türkiye'nin en uzun saat kulesidir. Temelinin 35 metre derinliğe kadar indiği söylenir. O kadar sağlam bir yapıdır ki, 1998 Adana depreminde bile zarar görmemiştir.</p>
                 </article>
             </div>
         </section>
 
-        <!--Festivaller-->
-        <section class="row g-4">
+        <section class="row g-4 mb-4">
             <div class="col-md-12">
-                <article class="city-card p-4 shadow-sm">
+                <article class="card p-4 shadow-sm">
                     <h4 class="highlight-text">🎊 Festivaller Şehri Adana</h4>
                     <p>Adana, insanın enerjisini festivallere çok iyi yansıtan bir şehirdir.</p>
                     <p><span class="highlight-text">🍊Portakal Çiçeği Karnavalı:</span> Her yıl nisan ayında şehir, mis gibi portakal çiçeği kokusuyla dolar. Türkiye'nin ilk karnavalı olma özelliğini taşır ve sokaklarda inanılmaz bir neşe hakimdir.</p>
@@ -195,19 +173,16 @@
             </div>
         </section>
 
-        <!--İklim-->
-        <section class="row g-4">
+        <section class="row g-4 mb-4">
             <div class="col-md-12">
-                <article class="city-card p-4 shadow-sm">
+                <article class="card p-4 shadow-sm">
                     <h4 class="highlight-text">🌏 İklim ve Coğrafya</h4>
-                    <p>Seyhan ve Ceyhan nehirlerinin hayat verdiği Çukurova, dünyanın en bereketli topraklarından biridir. Bu bereket, şehrin hem ekonomisini hem de edebiyatını (Yaşar Kemal gibi isimlere) şekillendirmiştir. Tabii o meşhur "güneşe ateş edilen" sıcakları da 
-                        unutmamak gerekir; Adana'da yaz mevsimi bir mevsimden ziyade bir yaşam biçimidir.</p>                
+                    <p>Seyhan ve Ceyhan nehirlerinin hayat verdiği Çukurova, dünyanın en bereketli topraklarından biridir. Bu bereket, şehrin hem ekonomisini hem de edebiyatını (Yaşar Kemal gibi isimlere) şekillendirmiştir. Tabii o meşhur "güneşe ateş edilen" sıcakları da unutmamak gerekir; Adana'da yaz mevsimi bir mevsimden ziyade bir yaşam biçimidir.</p>                
                 </article>
             </div>
         </section>
 
-        <!-- Adana Demirspor Bölümü (Semantic: section) -->
-        <section class="ads-section p-4 shadow-sm">
+        <section class="card p-4 shadow-sm mb-4">
             <div class="row align-items-center">
                 <div class="col-md-7">
                     <h3 style="color: #00558c;">⚡ Şehrin Takımı: Adana Demirspor</h3>
