@@ -1,0 +1,70 @@
+/* =========================================
+   YAĞMUR ASLANHAN - WEB PROJESİ ANA STİL DOSYASI
+========================================= */
+
+/* --- GENEL AYARLAR --- */
+body { 
+    background-color: #fff0f3; 
+    font-family: 'Quicksand', sans-serif; 
+    color: #5c4d4d; 
+}
+.navbar-brand { 
+    font-weight: bold; 
+    color: white !important; 
+}
+.btn-primary, .btn-pink { 
+    background-color: #ff4d6d !important; 
+    border: none !important; 
+    border-radius: 50px; 
+    color: white;
+}
+footer { 
+    background-color: #ff85a2; 
+    color: white; 
+}
+.highlight-title { 
+    color: #ff4d6d; 
+    font-weight: bold; 
+}
+
+/* --- KART TASARIMLARI (Profil, CV, Login, İletişim) --- */
+.profile-card, .cv-card, .contact-card, .login-card { 
+    background-color: white; 
+    padding: 20px; 
+    border-radius: 30px; 
+    border: 2px solid #ffb3c1; 
+    transition: transform 0.3s; 
+}
+.login-card { 
+    padding: 40px; 
+    margin-top: 50px; 
+}
+.profile-card:hover, .cv-card:hover, .contact-card:hover { 
+    transform: translateY(-5px); 
+}
+
+/* --- LİSTELER VE SOSYAL MEDYA LİNKLERİ --- */
+.list-group-item { 
+    background-color: transparent; 
+    border-bottom: 1px dashed #ffb3c1 !important; 
+    border-left: none; 
+    border-right: none; 
+    border-top: none; 
+    padding: 12px 10px; 
+}
+.social-link { 
+    color: #ff85a2; 
+    font-size: 1.5rem; 
+    margin: 0 10px; 
+    transition: color 0.3s; 
+}
+.social-link:hover { 
+    color: #ff4d6d; 
+}
+
+/* --- HAKKIMDA SAYFASI API KISMI İÇİN --- */
+#moviePoster {
+    max-height: 180px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(255, 77, 109, 0.2);
+}
